@@ -1,22 +1,22 @@
 import Sequelize, { Sequelize as SequelizeType } from "sequelize";
 
-interface UserAttributes {
-    firstName: string,
-    lastName: string
+interface IUserAttributes {
+    firstName: string;
+    lastName: string;
 }
 
-type UserInstance = Sequelize.Instance<UserAttributes> & UserAttributes;
-type UserModel = Sequelize.Model<UserInstance, UserAttributes>;
+type UserInstance = Sequelize.Instance<IUserAttributes> & IUserAttributes;
+type UserModel = Sequelize.Model<UserInstance, IUserAttributes>;
 
 class User {
     public user: UserModel;
-    private attributes: SequelizeAttributes<UserAttributes>;
+    private attributes: SequelizeAttributes<IUserAttributes>;
     public create(sequelize: SequelizeType): any {
         this.attributes = {
             firstName: { type: Sequelize.STRING },
             lastName: { type: Sequelize.STRING }
         };
-        this.user = sequelize.define<UserInstance, UserAttributes>("user", this.attributes);
+        this.user = sequelize.define<UserInstance, IUserAttributes>("user", this.attributes);
         return this.user.sync().then(() => {
             return this.user;
         });

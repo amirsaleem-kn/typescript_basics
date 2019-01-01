@@ -1,5 +1,5 @@
-import { Settings } from './settingsInterface';
 import fs from "fs";
+import { ISettings } from "./settingsInterface";
 
 // dialectOptions: {
 //     ssl: {
@@ -9,7 +9,7 @@ import fs from "fs";
 //     }
 // },
 
-const appSettings: Settings = {
+const appSettings: ISettings = {
     defaultPort: 3000,
     sequelize: {
         database: "testdb",

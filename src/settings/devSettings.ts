@@ -1,6 +1,6 @@
-import { Settings } from './settingsInterface';
+import { ISettings } from "./settingsInterface";
 
-const appSettings: Settings = {
+const appSettings: ISettings = {
     defaultPort: 3000,
     sequelize: {
         database: "testdb",

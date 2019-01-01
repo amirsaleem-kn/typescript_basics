@@ -1,26 +1,26 @@
-interface Settings {
+interface ISettings {
     defaultPort: number;
-    sequelize: Sequelize;
+    sequelize: ISequelize;
 }
 
-interface SequelizePool {
+interface ISequelizePool {
     acquire: number;
     idle: number;
     max: number;
     min: number;
 }
 
-interface Sequelize {
+interface ISequelize {
     database: string;
     dialect: string;
     host: string;
     password: string;
-    sequelizePool: SequelizePool;
+    sequelizePool: ISequelizePool;
     username: string;
 }
 
 export {
-    Settings,
-    SequelizePool,
-    Sequelize
-}
+    ISettings,
+    ISequelizePool,
+    ISequelize
+};
